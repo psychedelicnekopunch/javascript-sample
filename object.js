@@ -4,6 +4,24 @@ var obj2 = {
 	val2: 'test',
 };
 
+var obj3 = {};
+
+if (obj3) {
+	console.log('obj3 is true');
+} else {
+	console.log('obj3 is false');
+}
+
+console.log(obj2.hasOwnProperty('val1'));
+console.log(obj2.hasOwnProperty('val3'));
+
+/*
+if (obj3.length) {
+	console.log('obj3 is true');
+} else {
+	console.log('obj3 is false');
+}*/
+
 console.log('var obj = null');
 console.log("var obj2 = {val1: 'override', val2: 'test'}");
 console.log('\n');
