@@ -1,5 +1,5 @@
-var price = '1234';
-var len = price.length;
+// var price = '1234';
+// var len = price.length;
 
 // console.log(price.substring(0, 1));
 // console.log(price.substring(len - 3 , len));
