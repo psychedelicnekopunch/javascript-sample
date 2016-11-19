@@ -14,6 +14,12 @@ if (obj3) {
 
 console.log(obj2.hasOwnProperty('val1'));
 console.log(obj2.hasOwnProperty('val3'));
+console.log(obj2.hasOwnProperty(''));
+console.log(obj2.hasOwnProperty(null));
+console.log(obj2.hasOwnProperty(undefined));
+console.log(obj3.hasOwnProperty(''));
+console.log(obj3.hasOwnProperty(null));
+console.log(obj3.hasOwnProperty(undefined));
 
 /*
 if (obj3.length) {
