@@ -2,9 +2,7 @@
 
 const _ = require('lodash');
 
-let i = 0;
-
-const arr = _.times(5, (j) => {
+const arr = _.times(5, (i) => {
 	return i++;
 });
 
