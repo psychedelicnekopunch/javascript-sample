@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>All Selector</title>
+	<style rel="stylesheet">
+		input {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 12px;
+		}
+	</style>
+</head>
+<body>
+	Sample 1<br>
+	<input id="allSelector" type="text" value="'all selector' is smaple code in javascript." readonly>
+	Sample 2<br>
+	<input type="text" onclick="selectAll(this)" value="'all selector' is smaple code in javascript." readonly>
+	Sample 3<br>
+	<input type="text" onclick="this.select()" value="'all selector' is smaple code in javascript." readonly>
+	<script type="text/javascript">
+		// Sample 1
+		var target = document.getElementById('allSelector');
+		if (target) {
+			target.addEventListener('click', function(e) {
+				// e.target.select();
+				target.select();
+			})
+		}
+
+		// Sample 2
+		function selectAll(target) {
+			target.select();
+		}
+
+	</script>
+</body>
+</html>
