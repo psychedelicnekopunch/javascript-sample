@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout</title>
+
+</head>
+<body>
+	<button type="button" onClick="start()">start</button>
+	<div id="time"></div>
+	<script src="./../node_modules/moment/min/moment.min.js"></script>
+	<script style="text/javascript">
+
+		var promise = null
+		var promiseInterval = null
+		var time = document.getElementById('time')
+		var currentTime = 0
+
+
+		function init() {
+			if (!time) {
+				console.log('error')
+				return
+			}
+			setTime(0)
+		}
+
+
+		function setTime(t) {
+			time.innerHTML = t
+		}
+
+
+		function start() {
+			if (promise) {
+				window.clearTimeout(promise)
+				promise = null
+			}
+
+			currentTime = moment().format('X')
+
+			if (!promiseInterval) {
+				promiseInterval = window.setInterval(() => {
+					setTime(moment().format('X') - currentTime)
+				}, 100)
+
+			}
+
+			promise = window.setTimeout(() => {
+				if (promiseInterval) {
+					window.clearInterval(promiseInterval)
+					promiseInterval = null
+				}
+				setTime('OK')
+				alert('OK')
+				promise = null
+			}, 5000)
+		}
+
+
+		init()
+
+	</script>
+</body>
+</html>
