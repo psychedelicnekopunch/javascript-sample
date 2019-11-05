@@ -35,4 +35,4 @@ console.log('****** No 06 ******');
 console.log('arr.splice(1, 1);');
 console.log(arr);
 
-process.exit();
+// process.exit();
