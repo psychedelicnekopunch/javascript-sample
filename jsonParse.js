@@ -1,23 +1,31 @@
-'use strict';
+'use strict'
 
-const body = '{"result":"success","data":[{"id":1,"name":"Simian Mobile Disco"},{"id":2,"name":"Kiasmos"}],"time":"134ms"}';
+const body = '{"result":"success","data":[{"id":1,"name":"Simian Mobile Disco"},{"id":2,"name":"Kiasmos"}],"time":"134ms"}'
 
-const res = JSON.parse(body);
-
-console.log(res);
+// const res = JSON.parse(body)
+// console.log(res)
 
 // Error Handling
-const errorBody = 'ERROR! {"result":"success","data":[{"id":1,"name":"Simian Mobile Disco"},{"id":2,"name":"Kiasmos"}],"time":"134ms"}';
+const errorBody = 'ERROR! {"result":"success","data":[{"id":1,"name":"Simian Mobile Disco"},{"id":2,"name":"Kiasmos"}],"time":"134ms"}'
 
-const callback = (res) => {
-	console.log(res);
-}
+let obj = null
 
 try {
-	callback(JSON.parse(errorBody));
-	console.log('stop');
+	obj = JSON.parse(errorBody)
 } catch(e) {
-	callback(e.message);
+	console.log('==========')
+	console.log(e.message)
+	console.log('==========')
 }
 
-console.log('finish');
+console.log(obj)
+
+try {
+	obj = JSON.parse(body)
+} catch(e) {
+	console.log('==========')
+	console.log(e.message)
+	console.log('==========')
+}
+
+console.log(obj)
