@@ -1,4 +1,12 @@
+
 var i = 0;
+
+if (i) {
+	console.log(`${i} is true`)
+} else {
+	console.log(`${i} is false`)
+}
+
 
 if (++i === 0) {
 	console.log('true: i is ', i);
