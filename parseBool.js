@@ -22,12 +22,12 @@ function parseBool(v) {
 		// String
 		// WARN: 色々パターンがあると思うので、怪しい挙動だったらコメントアウトする。
 		if (typeof v == 'string') {
-			if (isNaN(Number(v))) {
+			if (Number.isNaN(Number(v))) {
 				return true
 			}
 		}
 		// NaN
-		if (isNaN(v)) {
+		if (Number.isNaN(v)) {
 			return false
 		}
 		return null
@@ -55,3 +55,4 @@ check(-2)
 check('')
 check('-1')
 check('-2')
+check(1n)
