@@ -8,6 +8,7 @@ arr.forEach((value, key) => {
 	console.log(key + '. ' + value)
 })
 
+console.log('--------')
 
 const obj = {
 	id: 0,
@@ -30,7 +31,15 @@ values.forEach((value, i) => {
 	console.log(keys[i] + '. ' + value)
 })
 
+console.log('--------')
+
 const cnt = keys.length
 for (let i = 0; i < cnt; i++) {
 	console.log(keys[i] + '. ' + values[i])
 }
+
+console.log('--------')
+
+keys.forEach((key) => {
+	console.log(key + '. ' + obj[key])
+})
