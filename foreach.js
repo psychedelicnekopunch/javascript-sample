@@ -10,12 +10,30 @@ arr.forEach((value, key) => {
 
 console.log('--------')
 
+// const obj = {
+// 	id: 0,
+// 	name: 'psychedelic nekopunch',
+// 	address: 'Tokyo',
+// 	sex: 'male',
+// }
+
+
 const obj = {
 	id: 0,
 	name: 'psychedelic nekopunch',
 	address: 'Tokyo',
 	sex: 'male',
-	age: 20,
+	marks: {
+		japanese: 'D',
+		science: 'C',
+		math: 'A',
+		physical: 'A',
+		english: {
+			reading: 'B',
+			writing: 'C',
+			speaking: 'A',
+		}
+	},
 }
 
 
@@ -41,5 +59,29 @@ for (let i = 0; i < cnt; i++) {
 console.log('--------')
 
 keys.forEach((key) => {
-	console.log(key + '. ' + obj[key])
+	console.log(`${key}: ${obj[key]}`)
 })
+
+console.log('--------')
+
+function reflexiveCall(obj, nest) {
+	const keys = Object.keys(obj)
+	keys.forEach((key) => {
+		// console.log(typeof obj[key])
+		if (typeof obj[key] == 'object') {
+			if (nest) {
+				reflexiveCall(obj[key], `${nest}${key}.`)
+			} else {
+				reflexiveCall(obj[key], `${key}.`)
+			}
+			return
+		}
+		if (nest) {
+			console.log(`${nest}${key}: ${obj[key]}`)
+		} else {
+			console.log(`${key}: ${obj[key]}`)
+		}
+	})
+}
+
+reflexiveCall(obj, '')
