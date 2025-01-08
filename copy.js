@@ -32,6 +32,12 @@ const originObj = {
 // Shallow copy (シャローコピー)
 // https://developer.mozilla.org/ja/docs/Glossary/Shallow_copy
 //
+// スプレッド構文
+// https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+//
+// Array.prototype.map()
+// https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+//
 
 // let shallowCopy = originArr
 let shallowCopy = originArr.map(v => v)
